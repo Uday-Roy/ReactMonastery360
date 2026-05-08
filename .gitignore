@@ -1,0 +1,11 @@
+node_module
+node_modules
+dist
+.env
+SETUP_GUIDE.md
+PACKAGES_DOCUMENTATION.md
+ownguide.txt
+ADMIN_SETUP_GUIDE.md
+COMPLETE_IMPLEMENTATION_REPORT.md
+PROJECT_SUMMARY.md
+QUICK_START.md

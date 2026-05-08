@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  color: #f5f5f5;
+}
+
+.dark body {
+  background: #0a0e27;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1f3a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e67e22;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f39c12;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Floating text over carousel */
+.carousel-floating-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  animation: float 4s ease-in-out infinite;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-floating-text h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.carousel-floating-text p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #f0d080;
+  font-style: italic;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-lg transition duration-300 font-semibold;
+}
+
+.btn-secondary {
+  @apply px-6 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition duration-300 font-semibold;
+}
+
+/* Card styles */
+.card {
+  @apply bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700;
+}
+
+.card-hover {
+  @apply card transition duration-300 hover:shadow-xl hover:border-orange-500;
+}
+
+/* Enhanced styles for new sections */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+}
+
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 114, 128, 0.4);
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* Section backgrounds */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Grid gallery animation */
+.grid > div {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.grid > div:nth-child(1) {
+  animation-delay: 0s;
+}
+.grid > div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.grid > div:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.grid > div:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.grid > div:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.grid > div:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text shadow for better readability */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-floating-text h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-floating-text p {
+    font-size: 1rem;
+  }
+}
